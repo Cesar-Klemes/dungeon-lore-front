@@ -5,10 +5,10 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo-removebg.png" width="225" height="225" />
+    <img alt="Vue logo" class="logo" src="@/assets/logo-removebg.png" width="225" height="235" />
 
     <div class="wrapper">
-      <HelloWorld title="Dungeon Lore" msg="Lugar onde sua aventura começa" />
+      <HelloWorld title="Dungeon Lore" msg="Lugar onde sua aventura começa!" />
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
