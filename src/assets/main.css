@@ -15,6 +15,13 @@ a,
   transition: 0.4s;
 }
 
+.orange {
+  text-decoration: none;
+  color: #FF6600;
+  transition: 0.4s;
+  font-family: "Times New Roman";
+}
+
 @media (hover: hover) {
   a:hover {
     background-color: hsla(160, 100%, 37%, 0.2);
