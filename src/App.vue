@@ -1,5 +1,5 @@
 <template>
-    <div style="position: absolute; bottom: 5px; left: 5px; background-color: #424242; border-radius: 5px; opacity: 40%"><span class="px-2">Desenvolvido por Cesar Klemes</span></div>
+    <div style="position: absolute; bottom: 5px; left: 5px; background-color: #424242; border-radius: 5px; opacity: 40%"><span class="px-2">Developed by Cesar Klemes</span></div>
     <v-scroll-x-reverse-transition>
       <img
         src="./assets/wallpaper.jpg"
@@ -18,7 +18,7 @@
                 class="mx-auto"
               />
               <h1 class="title mt-10">The Spellbook</h1>
-              <h4>Onde suas aventuras de RPG começam!</h4>
+              <h4>Where your RPG adventures begin!</h4>
               <v-btn
                 style="font-size: 25px; font-family: Georgia, serif"
                 color="#FF6600"
