@@ -7,7 +7,7 @@
       >
     </v-scroll-x-reverse-transition>
     <v-container>
-      <v-row style="min-height: 850px" class="text-center">
+      <v-row style="min-height: 800px; max-height: 950px" class="text-center">
         <v-col align-self="center">
           <v-row>
             <v-col>
@@ -35,26 +35,29 @@
         </v-col>
         <v-scroll-x-reverse-transition>
           <v-col v-show="grid" cols="6" align-self="center">
-            <v-row style="cursor: pointer">
-              <v-col cols="auto">
-                <div class="div-btn-menu">
-                  <v-icon class="mt-1">mdi-play</v-icon>
-                </div>
-              </v-col>
-              <v-col cols="auto" class="mt-1">
-                Jogar
-              </v-col>
-            </v-row>
-            <v-row style="cursor: pointer">
-              <v-col cols="auto">
-                <div class="div-btn-menu">
-                  <v-icon class="mt-1">mdi-book-open-page-variant</v-icon>
-                </div>
-              </v-col>
-              <v-col cols="auto" class="mt-1">
-                Livro do Jogador
-              </v-col>
-            </v-row>
+            <router-view/>
+            <div>
+<!--              <v-row style="cursor: pointer">-->
+<!--                <v-col cols="auto">-->
+<!--                  <div class="div-btn-menu">-->
+<!--                    <v-icon class="mt-1">mdi-play</v-icon>-->
+<!--                  </div>-->
+<!--                </v-col>-->
+<!--                <v-col cols="auto" class="mt-1">-->
+<!--                  Jogar-->
+<!--                </v-col>-->
+<!--              </v-row>-->
+<!--              <v-row style="cursor: pointer">-->
+<!--                <v-col cols="auto">-->
+<!--                  <div class="div-btn-menu">-->
+<!--                    <v-icon class="mt-1">mdi-book-open-page-variant</v-icon>-->
+<!--                  </div>-->
+<!--                </v-col>-->
+<!--                <v-col cols="auto" class="mt-1">-->
+<!--                  Livro do Jogador-->
+<!--                </v-col>-->
+<!--              </v-row>-->
+            </div>
           </v-col>
         </v-scroll-x-reverse-transition>
       </v-row>
@@ -114,6 +117,8 @@ body {
   font-size: 20px;
   color: white;
 }
+
+
 
 ::-webkit-scrollbar {
   width: 5px;
