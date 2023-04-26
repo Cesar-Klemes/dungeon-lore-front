@@ -14,8 +14,8 @@
                 height="235"
                 class="mx-auto"
               />
-              <h1 class="title">Dungeon Lore</h1>
-              <h4>Onde suas aventuras começam!</h4>
+              <h1 class="title">The Spellbook</h1>
+              <h4>Onde suas aventuras de RPG começam!</h4>
               <v-btn
                 style="font-size: 20px; font-family: Georgia, serif"
                 color="#FF6600"
