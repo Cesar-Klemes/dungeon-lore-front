@@ -1,9 +1,11 @@
 <template>
-  <v-row>
-    <v-col>
-      <v-btn color="success">teste</v-btn>
-    </v-col>
-  </v-row>
+  <v-container>
+    <v-row>
+      <v-col>
+        <v-btn color="success">teste</v-btn>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
@@ -13,7 +15,5 @@ export default {
 </script>
 
 <style scoped>
-  body {
-    background-color: transparent;
-  }
+
 </style>

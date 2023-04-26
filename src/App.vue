@@ -7,7 +7,7 @@
       >
     </v-scroll-x-reverse-transition>
     <v-container>
-      <v-row style="min-height: 800px; max-height: 950px" class="text-center">
+      <v-row style="min-height: 90vh; max-height: 100vh" class="text-center">
         <v-col align-self="center">
           <v-row>
             <v-col>
@@ -117,8 +117,6 @@ body {
   font-size: 20px;
   color: white;
 }
-
-
 
 ::-webkit-scrollbar {
   width: 5px;
