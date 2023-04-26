@@ -1,4 +1,5 @@
 <template>
+    <div style="position: absolute; bottom: 5px; left: 5px; background-color: #424242; border-radius: 5px; opacity: 40%"><span class="px-2">Desenvolvido por Cesar Klemes</span></div>
     <v-scroll-x-reverse-transition>
       <img
         src="./assets/wallpaper.jpg"
@@ -16,14 +17,16 @@
                 height="235"
                 class="mx-auto"
               />
-              <h1 class="title">The Spellbook</h1>
+              <h1 class="title mt-10">The Spellbook</h1>
               <h4>Onde suas aventuras de RPG começam!</h4>
               <v-btn
-                style="font-size: 20px; font-family: Georgia, serif"
+                style="font-size: 25px; font-family: Georgia, serif"
                 color="#FF6600"
                 class="mt-5 text-capitalize"
                 variant="outlined"
                 @click="grid = true; wallpaper = 'wallpaper-background2'"
+                height="50px"
+                width="150px"
               >
                 Start
               </v-btn>
@@ -31,8 +34,27 @@
           </v-row>
         </v-col>
         <v-scroll-x-reverse-transition>
-          <v-col v-show="grid" cols="6" class="">
-            <router-view/>
+          <v-col v-show="grid" cols="6" align-self="center">
+            <v-row style="cursor: pointer">
+              <v-col cols="auto">
+                <div class="div-btn-menu">
+                  <v-icon class="mt-1">mdi-play</v-icon>
+                </div>
+              </v-col>
+              <v-col cols="auto" class="mt-1">
+                Jogar
+              </v-col>
+            </v-row>
+            <v-row style="cursor: pointer">
+              <v-col cols="auto">
+                <div class="div-btn-menu">
+                  <v-icon class="mt-1">mdi-book-open-page-variant</v-icon>
+                </div>
+              </v-col>
+              <v-col cols="auto" class="mt-1">
+                Livro do Jogador
+              </v-col>
+            </v-row>
           </v-col>
         </v-scroll-x-reverse-transition>
       </v-row>
@@ -51,6 +73,16 @@
 </script>
 
 <style>
+.div-btn-menu {
+  border: 1px solid white;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+}
+.div-btn-menu:hover {
+  background-color: #424242;
+  cursor: pointer;
+}
 .title{
   color: #FF6600;
   font-family: "Times New Roman", serif;
