@@ -1,8 +1,10 @@
 <template>
-    <img
-      src="./assets/wallpaper.jpg"
-      class="wallpaper-background"
-    >
+    <v-scroll-x-reverse-transition>
+      <img
+        src="./assets/wallpaper.jpg"
+        :class="wallpaper"
+      >
+    </v-scroll-x-reverse-transition>
     <v-container>
       <v-row style="min-height: 850px" class="text-center">
         <v-col align-self="center">
@@ -21,16 +23,18 @@
                 color="#FF6600"
                 class="mt-5 text-capitalize"
                 variant="outlined"
-                @click="grid = true"
+                @click="grid = true; wallpaper = 'wallpaper-background2'"
               >
-                Começar
+                Start
               </v-btn>
             </v-col>
           </v-row>
         </v-col>
-        <v-col v-show="grid" cols="6" class="bg-blue-grey">
-
-        </v-col>
+        <v-scroll-x-reverse-transition>
+          <v-col v-show="grid" cols="6" class="">
+            <router-view/>
+          </v-col>
+        </v-scroll-x-reverse-transition>
       </v-row>
     </v-container>
 </template>
@@ -39,7 +43,8 @@
   export default {
     data(){
       return {
-        grid: false
+        grid: false,
+        wallpaper: 'wallpaper-background',
       }
     }
   }
@@ -57,6 +62,16 @@
   width: 100%;
   height: 80%;
   -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+  object-fit: cover;
+}
+
+.wallpaper-background2 {
+  position: absolute;
+  z-index: -1;
+  width: 16%;
+  height: 100%;
+  -webkit-mask-image:-webkit-gradient(linear, left top, right top, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
   mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
   object-fit: cover;
 }
