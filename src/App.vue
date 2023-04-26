@@ -1,49 +1,46 @@
 <template>
   <v-container>
-    <v-row style="min-height: 850px">
+    <v-row style="min-height: 850px" class="text-center">
       <v-col align-self="center">
         <v-row>
-          <v-col cols="auto" class="d-flex justify-center align-center">
+          <v-col>
             <v-img
               src="@/assets/logo-removebg.png"
               width="225"
               height="235"
+              class="mx-auto"
             />
-          </v-col>
-          <v-col cols="auto" align-self="center" class="pl-0 align-center">
-            <v-row>
-              <v-col>
-                <h1 class="title">Dungeon Lore</h1>
-              </v-col>
-            </v-row>
-            <v-row class="mt-n6">
-              <v-col>
-                <h4>Onde suas aventuras começam!</h4>
-              </v-col>
-            </v-row>
-            <v-row>
-              <v-col>
-                <v-btn class="bg-blue" @click="start()">Começar</v-btn>
-                {{ grid }}
-              </v-col>
-            </v-row>
+            <h1 class="title">Dungeon Lore</h1>
+            <h4>Onde suas aventuras começam!</h4>
+            <v-btn
+              style="font-size: 20px; font-family: Georgia, serif"
+              color="#FF6600"
+              class="mt-5 text-capitalize"
+              variant="outlined"
+              @click="grid = true"
+            >
+              Começar
+            </v-btn>
           </v-col>
         </v-row>
       </v-col>
-      <v-col v-if="grid" cols="6" class="d-flex justify-center align-center bg-blue-grey">
+      <v-col v-show="grid" cols="6" class="bg-blue-grey">
 
       </v-col>
     </v-row>
   </v-container>
 </template>
 
-<script lang="ts" setup>
-  let grid = false
-
-  function start(){
-    grid = true
+<script lang="ts">
+  export default {
+    data(){
+      return {
+        grid: false
+      }
+    }
   }
 </script>
+
 <style>
 .title{
   color: #FF6600;
