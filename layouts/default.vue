@@ -16,10 +16,10 @@
           exact
         >
           <v-list-item-action>
-            <v-icon>{{ item.icon }}</v-icon>
+            <v-icon :class="{ 'red--text': item.icon === 'mdi-book-open-page-variant' }">{{ item.icon }}</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
+            <v-list-item-title :class="{ 'red--text': item.title === 'The Spellbook' }">{{ item.title }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -29,7 +29,7 @@
       fixed
       app
     >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+      <v-app-bar-nav-icon @click.stop="miniVariant = !miniVariant" />
       <v-btn
         icon
         @click.stop="miniVariant = !miniVariant"
@@ -98,17 +98,17 @@ export default {
       fixed: false,
       items: [
         {
-          icon: 'mdi-apps',
-          title: 'Welcome',
+          icon: 'mdi-book-open-page-variant',
+          title: 'The Spellbook',
           to: '/'
         },
         {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
+          icon: 'mdi-sword-cross',
+          title: 'Classes',
+          to: '/classes'
         }
       ],
-      miniVariant: false,
+      miniVariant: true,
       right: true,
       rightDrawer: false,
       title: 'Vuetify.js'
@@ -116,3 +116,8 @@ export default {
   }
 }
 </script>
+<style>
+.red--text {
+  color: red;
+}
+</style>
