@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row>
-      <CardClasses :classes="classes"/>
+      <CardAlignments :alignments="alignments"/>
     </v-row>
   </v-container>
 </template>
@@ -11,9 +11,9 @@ export default {
   name: "index.vue",
 
   async asyncData({ $axios }) {
-    const classes = await $axios.$get('https://www.dnd5eapi.co/api/classes')
+    const alignments = await $axios.$get('https://www.dnd5eapi.co/api/alignments')
     return {
-      classes: classes.results,
+      alignments: alignments.results,
     }
   }
 }

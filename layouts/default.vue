@@ -108,6 +108,11 @@ export default {
           to: '/ability-scores'
         },
         {
+          icon: 'mdi-drama-masks',
+          title: 'Alignments',
+          to: '/alignments'
+        },
+        {
           icon: 'mdi-sword-cross',
           title: 'Classes',
           to: '/classes'
