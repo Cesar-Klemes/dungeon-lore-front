@@ -1,9 +1,9 @@
 <template>
   <div>
     <v-row>
-      <v-col v-for="equipment in equipments" cols="4">
+      <v-col v-for="feature in features" cols="4">
         <v-card min-height="200px" min-width="200px">
-          <v-card-title>{{ equipment.name }}</v-card-title>
+          <v-card-title>{{ feature.name }}</v-card-title>
           <v-divider/>
         </v-card>
       </v-col>
@@ -13,9 +13,9 @@
 
 <script>
 export default {
-  name: "CardEquipment",
+  name: "CardFeatures",
   props: {
-    equipments: {
+    features: {
       type: Array,
       default: () => [],
     }

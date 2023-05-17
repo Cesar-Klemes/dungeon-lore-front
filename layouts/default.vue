@@ -138,6 +138,11 @@ export default {
           to: '/equipments-categories'
         },
         {
+          icon: 'mdi-script-text-outline',
+          title: 'Features',
+          to: '/features'
+        },
+        {
           icon: 'mdi-dna',
           title: 'Races',
           to: '/races'
