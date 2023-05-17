@@ -143,6 +143,11 @@ export default {
           to: '/features'
         },
         {
+          icon: 'mdi-script-text',
+          title: 'Languages',
+          to: '/languages'
+        },
+        {
           icon: 'mdi-dna',
           title: 'Races',
           to: '/races'
