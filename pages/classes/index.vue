@@ -7,8 +7,11 @@
 </template>
 
 <script>
+import CardClasses from "~/components/cards-menu/CardClasses.vue";
+
 export default {
   name: "index.vue",
+  components: {CardClasses},
 
   async asyncData({ $axios }) {
     const classes = await $axios.$get('https://www.dnd5eapi.co/api/classes')

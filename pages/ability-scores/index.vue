@@ -7,8 +7,11 @@
 </template>
 
 <script>
+import CardAbilityScores from "~/components/cards-menu/CardAbilityScores.vue";
+
 export default {
   name: "index.vue",
+  components: {CardAbilityScores},
 
   async asyncData({ $axios }) {
     const abilityScores = await $axios.$get('https://www.dnd5eapi.co/api/ability-scores')
