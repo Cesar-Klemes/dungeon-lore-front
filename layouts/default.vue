@@ -106,6 +106,11 @@ export default {
           icon: 'mdi-sword-cross',
           title: 'Classes',
           to: '/classes'
+        },
+        {
+          icon: 'mdi-dna',
+          title: 'Races',
+          to: '/races'
         }
       ],
       miniVariant: true,
