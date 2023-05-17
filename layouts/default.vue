@@ -133,6 +133,11 @@ export default {
           to: '/equipments'
         },
         {
+          icon: 'mdi-bow-arrow',
+          title: 'Equipments Categories',
+          to: '/equipments-categories'
+        },
+        {
           icon: 'mdi-dna',
           title: 'Races',
           to: '/races'
