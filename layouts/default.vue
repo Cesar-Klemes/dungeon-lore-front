@@ -123,6 +123,11 @@ export default {
           to: '/classes'
         },
         {
+          icon: 'mdi-sword',
+          title: 'Damage Types',
+          to: '/damage-types'
+        },
+        {
           icon: 'mdi-dna',
           title: 'Races',
           to: '/races'
