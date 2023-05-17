@@ -1,9 +1,9 @@
 <template>
   <v-container>
-    <v-row>
-      <CardConditions :conditions="conditions"/>
-    </v-row>
-  </v-container>
+  <v-row>
+    <CardConditions :conditions="conditions"/>
+  </v-row>
+</v-container>
 </template>
 
 <script>

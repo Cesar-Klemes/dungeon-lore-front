@@ -128,6 +128,11 @@ export default {
           to: '/damage-types'
         },
         {
+          icon: 'mdi-axe-battle',
+          title: 'Equipments',
+          to: '/equipments'
+        },
+        {
           icon: 'mdi-dna',
           title: 'Races',
           to: '/races'
