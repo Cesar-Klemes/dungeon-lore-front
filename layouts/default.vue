@@ -113,6 +113,11 @@ export default {
           to: '/alignments'
         },
         {
+          icon: 'mdi-bottle-tonic-skull',
+          title: 'Conditions',
+          to: '/conditions'
+        },
+        {
           icon: 'mdi-sword-cross',
           title: 'Classes',
           to: '/classes'
