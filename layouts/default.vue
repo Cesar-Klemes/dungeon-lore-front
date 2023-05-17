@@ -148,6 +148,11 @@ export default {
           to: '/languages'
         },
         {
+          icon: 'mdi-magic-staff',
+          title: 'Magic Items',
+          to: '/magic-items'
+        },
+        {
           icon: 'mdi-dna',
           title: 'Races',
           to: '/races'
