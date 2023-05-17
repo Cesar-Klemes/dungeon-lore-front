@@ -103,6 +103,11 @@ export default {
           to: '/'
         },
         {
+          icon: 'mdi-numeric-9-plus-box-multiple-outline',
+          title: 'Ability Scores',
+          to: '/ability-scores'
+        },
+        {
           icon: 'mdi-sword-cross',
           title: 'Classes',
           to: '/classes'
