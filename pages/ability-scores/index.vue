@@ -54,7 +54,6 @@ export default {
       this.abilityScores = updatedAbilityScores
       this.loading = false
     }
-
   },
   mounted(){
     this.getAbilityScores()
