@@ -19,7 +19,9 @@
               <v-list-item v-for="skill in ability.skills">
                 <v-btn width="100%">{{ skill.name }}</v-btn>
               </v-list-item>
-              <v-list-item><span v-if="!ability.skills.length">No Skills</span></v-list-item>
+              <v-list-item v-if="!ability.skills || !ability.skills.length">
+                <span>No Skills</span>
+              </v-list-item>
             </v-list-group>
           </v-list>
         </v-card>
