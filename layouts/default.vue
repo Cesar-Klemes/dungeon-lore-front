@@ -147,13 +147,13 @@ export default {
           to: '/languages'
         },
         {
-          icon: '',
-          title: 'Proficiencies',
-          to: '/'
+          icon: 'mdi-crosshairs-gps',
+          title: 'Skills',
+          to: '/skills'
         },
         {
           icon: '',
-          title: 'Skills',
+          title: 'Proficiencies',
           to: '/'
         },
       ],

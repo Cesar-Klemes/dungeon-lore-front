@@ -17,7 +17,7 @@
                 <v-list-item-title>Skills:</v-list-item-title>
               </template>
               <v-list-item v-for="skill in ability.skills">
-                <v-btn width="100%">{{ skill.name }}</v-btn>
+                <v-btn width="100%" to="/skills">{{ skill.name }}</v-btn>
               </v-list-item>
               <v-list-item v-if="!ability.skills || !ability.skills.length">
                 <span>No Skills</span>
