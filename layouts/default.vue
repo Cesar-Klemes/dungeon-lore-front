@@ -152,9 +152,9 @@ export default {
           to: '/skills'
         },
         {
-          icon: '',
+          icon: 'mdi-chess-queen',
           title: 'Proficiencies',
-          to: '/'
+          to: '/proficiencies'
         },
       ],
       items: [
