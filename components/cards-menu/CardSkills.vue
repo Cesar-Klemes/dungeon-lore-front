@@ -10,7 +10,7 @@
             <v-col cols="auto">
               <v-chip
                 label
-                :color="chipColor"
+                :color="getChipColor(skill.ability_score.name)"
                 outlined
                 to="/ability-scores"
                 class="mt-3 mr-3"
@@ -37,10 +37,23 @@
 <script>
 export default {
   name: "CardSkills",
-  data() {
-    return {
-      chipColor: 'red'
-    }
+  methods: {
+    getChipColor(name) {
+      console.log(name)
+      if (name === 'CHA') {
+        return 'green'
+      } else if (name === 'DEX') {
+        return 'blue'
+      } else if (name === 'CON') {
+        return 'red'
+      } else if (name === 'INT') {
+        return 'yellow'
+      } else if (name === 'STR') {
+        return 'purple'
+      } else if (name === 'WIS') {
+        return 'orange'
+      }
+    },
   },
   props: {
     skills: {
