@@ -2,7 +2,7 @@
   <div>
     <v-card>
       <v-card-title>Proficiencies</v-card-title>
-      <v-divider/>
+      <v-divider style="border-bottom: red 1px solid"/>
       <v-card-text>
         <v-row>
           <v-col

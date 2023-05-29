@@ -19,9 +19,9 @@
               </v-chip>
             </v-col>
           </v-row>
-          <v-divider/>
+          <v-divider style="border-bottom: red 1px solid"/>
           <v-list>
-            <v-list-group prepend-item>
+            <v-list-group prepend-item color="red">
               <template v-slot:activator>
                 <v-list-item-title>Description:</v-list-item-title>
               </template>

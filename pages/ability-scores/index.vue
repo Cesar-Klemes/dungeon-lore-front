@@ -10,6 +10,9 @@
     </v-row>
   </v-container>
   <v-container v-else>
+    <v-row class="mb-2">
+      <h2 style="text-transform: capitalize; margin: auto">{{ $route.name }}</h2>
+    </v-row>
     <v-row>
       <CardAbilityScores :abilityScores="abilityScores"/>
     </v-row>

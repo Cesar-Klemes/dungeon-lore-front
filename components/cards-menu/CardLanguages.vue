@@ -4,7 +4,7 @@
       <v-col v-for="language in languages" cols="4">
         <v-card min-height="200px" min-width="200px">
           <v-card-title>{{ language.name }}</v-card-title>
-          <v-divider/>
+          <v-divider style="border-bottom: red 1px solid"/>
           <v-card-title>Type</v-card-title>
           <v-card-subtitle>{{ language.type }}</v-card-subtitle>
           <v-card-title>Typical Speakers</v-card-title>

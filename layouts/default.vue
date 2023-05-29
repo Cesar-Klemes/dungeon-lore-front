@@ -19,16 +19,16 @@
           </v-list-item-content>
         </v-list-item>
         <v-divider/>
-        <v-list-item to="/">
+        <v-list-item to="/" color="red">
           <v-list-item-action>
-            <v-icon class="red--text">mdi-book-open-page-variant</v-icon>
+            <v-icon>mdi-book-open-page-variant</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title class="red--text">The Spellbook</v-list-item-title>
+            <v-list-item-title>The Spellbook</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
-        <v-list-group>
+        <v-list-group color="red">
           <template v-slot:activator>
             <v-icon>mdi-human</v-icon>
             <v-list-item-title class="pl-8">Character Data</v-list-item-title>
@@ -48,24 +48,6 @@
             </v-list-item-content>
           </v-list-item>
         </v-list-group>
-
-
-
-
-<!--        <v-list-item-->
-<!--          v-for="(item, i) in items"-->
-<!--          :key="i"-->
-<!--          :to="item.to"-->
-<!--          router-->
-<!--          exact-->
-<!--        >-->
-<!--          <v-list-item-action>-->
-<!--            <v-icon :class="{ 'red&#45;&#45;text': item.icon === 'mdi-book-open-page-variant' }">{{ item.icon }}</v-icon>-->
-<!--          </v-list-item-action>-->
-<!--          <v-list-item-content>-->
-<!--            <v-list-item-title :class="{ 'red&#45;&#45;text': item.title === 'The Spellbook' }">{{ item.title }}</v-list-item-title>-->
-<!--          </v-list-item-content>-->
-<!--        </v-list-item>-->
       </v-list>
     </v-navigation-drawer>
     <v-app-bar
@@ -73,7 +55,7 @@
       fixed
       app
     >
-      <v-toolbar-title class="ml-2"><span style="text-transform: capitalize">{{ $route.name }}</span></v-toolbar-title>
+      <v-toolbar-title class="ml-2"><span style="text-transform: capitalize">TopBar</span></v-toolbar-title>
       <v-spacer />
       <v-btn
         icon
@@ -204,7 +186,5 @@ export default {
 }
 </script>
 <style>
-.red--text {
-  color: red;
-}
+
 </style>

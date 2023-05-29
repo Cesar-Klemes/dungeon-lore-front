@@ -10,7 +10,12 @@
     </v-row>
   </v-container>
   <v-container v-else>
-    <CardProficiencies :proficiencies="proficiencies" />
+    <v-row class="mb-2">
+      <h2 style="text-transform: capitalize; margin: auto">{{ $route.name }}</h2>
+    </v-row>
+    <v-row>
+      <CardProficiencies :proficiencies="proficiencies" />
+    </v-row>
   </v-container>
 </template>
 
