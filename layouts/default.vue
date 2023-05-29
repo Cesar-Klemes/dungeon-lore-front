@@ -6,9 +6,19 @@
       :clipped="clipped"
       fixed
       app
-      style="width: auto"
+      style="width: auto; border-right: red 1px solid"
     >
-      <v-list>
+      <v-list class="mt-n1">
+        <v-list-item @click.stop="miniVariant = !miniVariant" >
+          <v-list-item-action>
+            <v-icon v-if="miniVariant">mdi-menu</v-icon>
+            <v-icon v-else>mdi-chevron-left</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Menu</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-divider/>
         <v-list-item to="/">
           <v-list-item-action>
             <v-icon class="red--text">mdi-book-open-page-variant</v-icon>
@@ -63,26 +73,7 @@
       fixed
       app
     >
-      <v-app-bar-nav-icon @click.stop="miniVariant = !miniVariant" />
-      <v-btn
-        icon
-        @click.stop="miniVariant = !miniVariant"
-      >
-        <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
-      </v-btn>
-      <v-btn
-        icon
-        @click.stop="clipped = !clipped"
-      >
-        <v-icon>mdi-application</v-icon>
-      </v-btn>
-      <v-btn
-        icon
-        @click.stop="fixed = !fixed"
-      >
-        <v-icon>mdi-minus</v-icon>
-      </v-btn>
-      <v-toolbar-title>{{ title }}</v-toolbar-title>
+      <v-toolbar-title class="ml-2"><span style="text-transform: capitalize">{{ $route.name }}</span></v-toolbar-title>
       <v-spacer />
       <v-btn
         icon
