@@ -2,7 +2,7 @@
   <div>
     <v-row>
       <v-col v-for="ability in abilityScores" cols="4">
-        <v-card min-height="200px" min-width="200px" >
+        <v-card min-height="200px" min-width="200px">
           <v-card-title>{{ ability.full_name }}</v-card-title>
           <v-divider style="border-bottom: red 1px solid"/>
           <v-list>
@@ -10,11 +10,17 @@
               <template v-slot:activator>
                 <v-list-item-title>Description:</v-list-item-title>
               </template>
+              <template v-slot:prependIcon>
+                <v-icon>mdi-text</v-icon>
+              </template>
               <v-card-text v-for="desc in ability.desc"><v-list-item>{{ desc }}</v-list-item></v-card-text>
             </v-list-group>
             <v-list-group prepend-item color="red">
               <template v-slot:activator>
                 <v-list-item-title>Skills:</v-list-item-title>
+              </template>
+              <template v-slot:prependIcon>
+                <v-icon>mdi-fencing</v-icon>
               </template>
               <v-list-item v-for="skill in ability.skills">
                 <v-btn width="100%" to="/skills">{{ skill.name }}</v-btn>
