@@ -1,42 +1,56 @@
 <template>
-  <div>
-    <v-row>
-      <v-col v-for="skill in skills" cols="4">
-        <v-card min-height="130px" min-width="200px">
+  <v-row>
+    <v-col>
+      <v-row>
+        <v-col cols="12">
+          <v-card width="120vh" style="margin-left: auto; margin-right: auto">
+            <v-tabs
+              center-active
+              show-arrows
+              color="red"
+              v-model="activeTabIndex"
+            >
+              <v-tab v-for="skill in skills">{{ skill.name }}</v-tab>
+            </v-tabs>
+          </v-card>
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-card width="120vh" class="mt-1" style="margin-left: auto; margin-right: auto">
           <v-row no-gutters>
             <v-col>
-              <v-card-title>{{ skill.name }}</v-card-title>
+              <v-card-title>{{ skills[activeTabIndex].name }}</v-card-title>
             </v-col>
             <v-col cols="auto">
               <v-chip
                 label
-                :color="getChipColor(skill.ability_score.name)"
+                :color="getChipColor(skills[activeTabIndex].ability_score.name)"
                 outlined
                 to="/ability-scores"
                 class="mt-3 mr-3"
               >
-                {{ skill.ability_score.name }}
+                {{ skills[activeTabIndex].ability_score.name }}
               </v-chip>
             </v-col>
           </v-row>
           <v-divider style="border-bottom: red 1px solid"/>
-          <v-list>
-            <v-list-group prepend-item color="red">
-              <template v-slot:activator>
-                <v-list-item-title>Description:</v-list-item-title>
-              </template>
-              <v-card-text v-for="desc in skill.desc"><v-list-item>{{ desc }}</v-list-item></v-card-text>
-            </v-list-group>
-          </v-list>
+          <v-card-title><h5>Description:</h5></v-card-title>
+          <v-card-text class="my-3 mb-4" v-for="desc in skills[activeTabIndex].desc">{{ desc }}</v-card-text>
         </v-card>
-      </v-col>
-    </v-row>
-  </div>
+      </v-row>
+    </v-col>
+  </v-row>
 </template>
 
 <script>
+
 export default {
   name: "CardSkills",
+  data() {
+    return {
+      activeTabIndex: 0,
+    }
+  },
   methods: {
     getChipColor(name) {
       if (name === 'CHA') {
@@ -52,14 +66,14 @@ export default {
       } else if (name === 'WIS') {
         return 'orange'
       }
-    },
+    }
   },
   props: {
     skills: {
       type: Array,
       default: () => [],
     }
-  }
+  },
 }
 </script>
 
