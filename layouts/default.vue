@@ -49,6 +49,27 @@
             </v-list-item-content>
           </v-list-item>
         </v-list-group>
+        <v-list-group color="red" v-model="classesGroup">
+          <template v-slot:activator>
+            <v-icon v-if="miniVariant && classesGroup">mdi-chevron-down</v-icon>
+            <v-icon v-else>mdi-sword-cross</v-icon>
+            <v-list-item-title class="pl-8">Classes</v-list-item-title>
+          </template>
+          <v-list-item
+            v-for="(item, i) in itemsClasses"
+            :key="i"
+            :to="item.to"
+            router
+            exact
+          >
+            <v-list-item-action :class="{ 'ml-6': !miniVariant }">
+              <v-icon>{{ item.icon }}</v-icon>
+            </v-list-item-action>
+            <v-list-item-content class="ml-n4">
+              <v-list-item-title>{{ item.title }}</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list-group>
       </v-list>
     </v-navigation-drawer>
     <v-app-bar
@@ -105,6 +126,7 @@ export default {
       drawer: false,
       fixed: false,
       characterDataGroup: false,
+      classesGroup: false,
       itemsCharacterData: [
         {
           icon: 'mdi-numeric-9-plus-box-multiple-outline',
@@ -130,6 +152,13 @@ export default {
           icon: 'mdi-chess-queen',
           title: 'Proficiencies',
           to: '/proficiencies'
+        },
+      ],
+      itemsClasses: [
+        {
+          icon: 'mdi-sword',
+          title: 'Classe',
+          to: '/classes'
         },
       ],
       items: [
