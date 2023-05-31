@@ -68,10 +68,19 @@ export default {
       }
     }
   },
+  mounted() {
+    if (this.paramSelected) {
+      this.activeTabIndex = this.skills.findIndex(skill => skill.name === this.paramSelected)
+    }
+  },
   props: {
     skills: {
       type: Array,
       default: () => [],
+    },
+    paramSelected: {
+      type: String,
+      default: ''
     }
   },
 }

@@ -10,7 +10,7 @@
   </v-container>
   <v-container v-else>
     <v-row class="mb-2">
-      <h2 style="text-transform: capitalize; margin: auto">{{ $route.name }}</h2>
+      <h2 style="text-transform: capitalize; margin: auto">Skills</h2>
     </v-row>
     <v-row>
       <CardSkills :skills="skills" :paramSelected="paramSelected" />
@@ -22,7 +22,7 @@
 import CardSkills from "~/components/cards-menu/CardSkills.vue";
 
 export default {
-  name: "Skills",
+  name: "skillName",
   components: {CardSkills},
   data(){
     return {
@@ -57,9 +57,12 @@ export default {
       this.loading = false
     }
   },
-  mounted(){
+  mounted() {
     this.getSkills()
-  },
+    if (this.$route.params.skillName) {
+      this.paramSelected = this.$route.params.skillName
+    }
+  }
 }
 </script>
 
