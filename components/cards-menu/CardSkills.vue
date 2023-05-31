@@ -39,7 +39,6 @@ export default {
   name: "CardSkills",
   methods: {
     getChipColor(name) {
-      console.log(name)
       if (name === 'CHA') {
         return 'green'
       } else if (name === 'DEX') {

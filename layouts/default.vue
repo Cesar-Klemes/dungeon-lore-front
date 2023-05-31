@@ -28,9 +28,10 @@
           </v-list-item-content>
         </v-list-item>
 
-        <v-list-group color="red">
+        <v-list-group color="red" v-model="characterDataGroup">
           <template v-slot:activator>
-            <v-icon>mdi-human</v-icon>
+            <v-icon v-if="miniVariant && characterDataGroup">mdi-chevron-down</v-icon>
+            <v-icon v-else>mdi-human</v-icon>
             <v-list-item-title class="pl-8">Character Data</v-list-item-title>
           </template>
           <v-list-item
@@ -103,6 +104,7 @@ export default {
       clipped: false,
       drawer: false,
       fixed: false,
+      characterDataGroup: false,
       itemsCharacterData: [
         {
           icon: 'mdi-numeric-9-plus-box-multiple-outline',
