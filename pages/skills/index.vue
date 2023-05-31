@@ -1,10 +1,9 @@
 <template>
   <v-container v-if="loading">
     <v-row>
-      <v-col cols="4" v-for="x in 6">
+      <v-col cols="4" v-for="x in 12">
         <v-card>
           <v-skeleton-loader type="table-heading, list-item-three-line" />
-          <v-skeleton-loader type="list-item-three-line" />
         </v-card>
       </v-col>
     </v-row>

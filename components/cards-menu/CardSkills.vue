@@ -2,7 +2,7 @@
   <div>
     <v-row>
       <v-col v-for="skill in skills" cols="4">
-        <v-card min-height="200px" min-width="200px">
+        <v-card min-height="130px" min-width="200px">
           <v-row no-gutters>
             <v-col>
               <v-card-title>{{ skill.name }}</v-card-title>
