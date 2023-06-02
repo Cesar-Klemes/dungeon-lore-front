@@ -57,10 +57,16 @@
 </template>
 
 <script>
+import ArtificerIcon from '~/assets/classes-svg/artificer.svg?inline'
+
 export default {
   name: "CardClasses",
+  components: {
+    ArtificerIcon
+  },
   data: () => ({
     model: null,
+    classeIcon: [ ArtificerIcon ]
   }),
   props: {
     classes: {
