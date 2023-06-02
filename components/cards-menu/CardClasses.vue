@@ -2,7 +2,7 @@
   <v-sheet
     class="mx-auto my-auto"
     elevation="8"
-    max-width="1200"
+    max-width="1000"
     rounded
   >
     <v-slide-group
@@ -21,11 +21,12 @@
           color="#212121"
           :class="['ma-4', selectedClass]"
           height="200"
-          width="180"
+          width="140"
           @click="toggle"
           style="border: red 1px solid"
           rounded
         >
+
           <div class="d-flex fill-height align-center justify-center">
             <v-scale-transition>
               <v-icon
