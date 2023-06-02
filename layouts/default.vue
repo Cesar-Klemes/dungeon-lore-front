@@ -157,7 +157,7 @@ export default {
       itemsClasses: [
         {
           icon: 'mdi-sword',
-          title: 'Classe',
+          title: 'All Classes',
           to: '/classes'
         },
       ],

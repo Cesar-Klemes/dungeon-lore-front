@@ -1,20 +1,66 @@
 <template>
-  <div>
-    <v-row>
-      <v-col v-for="classe in classes" cols="4">
-        <v-card min-height="200px" min-width="200px">
-          <v-card-title>{{ classe.name }}</v-card-title>
-          <v-divider/>
+  <v-sheet
+    class="mx-auto my-auto"
+    elevation="8"
+    max-width="1200"
+    rounded
+  >
+    <v-slide-group
+      v-model="model"
+      class="pa-4"
+      selected-class="bg-primary"
+      show-arrows
+      center-active
+    >
+      <v-slide-item
+        v-for="n in 15"
+        :key="n"
+        v-slot="{ isSelected, toggle, selectedClass }"
+      >
+        <v-card
+          color="#212121"
+          :class="['ma-4', selectedClass]"
+          height="200"
+          width="180"
+          @click="toggle"
+          style="border: red 1px solid"
+          rounded
+        >
+          <div class="d-flex fill-height align-center justify-center">
+            <v-scale-transition>
+              <v-icon
+                v-if="isSelected"
+                color="white"
+                size="48"
+                icon="mdi-close-circle-outline"
+              ></v-icon>
+            </v-scale-transition>
+          </div>
         </v-card>
-      </v-col>
-    </v-row>
-  </div>
+      </v-slide-item>
+    </v-slide-group>
+
+    <v-expand-transition>
+      <v-sheet
+        v-if="model != null"
+        height="200"
+      >
+        <div class="d-flex fill-height align-center justify-center">
+          <h3 class="text-h6">
+            Selected {{ model }}
+          </h3>
+        </div>
+      </v-sheet>
+    </v-expand-transition>
+  </v-sheet>
 </template>
 
 <script>
 export default {
   name: "CardClasses",
-
+  data: () => ({
+    model: null,
+  }),
   props: {
     classes: {
       type: Array,
