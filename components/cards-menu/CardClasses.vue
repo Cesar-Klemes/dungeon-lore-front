@@ -13,8 +13,8 @@
       center-active
     >
       <v-slide-item
-        v-for="n in 15"
-        :key="n"
+        v-for="classe in classes"
+        :key="classe.id"
         v-slot="{ isSelected, toggle, selectedClass }"
       >
         <v-card
@@ -26,8 +26,8 @@
           style="border: red 1px solid"
           rounded
         >
-
           <div class="d-flex fill-height align-center justify-center">
+            <component :is="iconComponent(classe.name)" style="fill: white; color: white" />
             <v-scale-transition>
               <v-icon
                 v-if="isSelected"
@@ -57,17 +57,29 @@
 </template>
 
 <script>
-import ArtificerIcon from '~/assets/classes-svg/artificer.svg?inline'
+import icons from "~/helpers/icons";
 
 export default {
   name: "CardClasses",
   components: {
-    ArtificerIcon
+    ...icons
   },
   data: () => ({
     model: null,
-    classeIcon: [ ArtificerIcon ]
   }),
+  computed: {
+    iconComponent() {
+      return (className) => {
+        // Converte o nome da classe para CamelCase
+        const iconName = className
+          .split(' ')
+          .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+          .join('') + 'Icon'
+        // Retorna o componente de ícone correspondente
+        return icons[iconName]
+      }
+    }
+  },
   props: {
     classes: {
       type: Array,
@@ -78,6 +90,8 @@ export default {
 
 </script>
 
-<style scoped>
+<style>
 
 </style>
+
+
