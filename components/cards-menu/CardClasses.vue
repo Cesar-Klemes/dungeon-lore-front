@@ -26,16 +26,9 @@
           style="border: red 1px solid"
           rounded
         >
-          <div class="d-flex fill-height align-center justify-center">
-            <component :is="iconComponent(classe.name)" style="fill: white; color: white" />
-            <v-scale-transition>
-              <v-icon
-                v-if="isSelected"
-                color="white"
-                size="48"
-                icon="mdi-close-circle-outline"
-              ></v-icon>
-            </v-scale-transition>
+          <div class="icon-container">
+            <component :is="iconComponent(classe.name)" class="icon" />
+            <div class="icon-label">{{ classe.name }}</div>
           </div>
         </v-card>
       </v-slide-item>
@@ -91,7 +84,23 @@ export default {
 </script>
 
 <style>
+.icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
 
+.icon-label {
+  margin-top: 8px;
+  text-align: center;
+}
+
+.icon {
+  fill: white;
+  height: 115px;
+}
 </style>
 
 
