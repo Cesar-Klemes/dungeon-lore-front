@@ -33,34 +33,40 @@ export default {
   },
   methods: {
     async getAbilityScores() {
-      const response = await this.$axios.$get('https://www.dnd5eapi.co/api/ability-scores')
-      this.abilityScores = response.results
-      let scoreDetail = []
+      try {
+        this.abilityScores = await this.$rpgDndApi('ability-scores');
 
-      for (const score of this.abilityScores) {
-        let detail = await this.$axios.$get('https://www.dnd5eapi.co/api/ability-scores/' + score.index)
-        scoreDetail.push(detail)
-      }
+        let scoreDetail = []
 
-      let updatedAbilityScores = [...this.abilityScores]
-
-      for (let i = 0; i < updatedAbilityScores.length; i++) {
-        let score = updatedAbilityScores[i];
-        let detail = scoreDetail.find(detail => detail.index === score.index);
-        if (detail) {
-          score.full_name = detail.full_name;
-          score.desc = detail.desc;
-          score.skills = detail.skills;
+        for (const score of this.abilityScores) {
+          let detail = await this.$axios.$get('https://www.dnd5eapi.co/api/ability-scores/' + score.index)
+          scoreDetail.push(detail)
         }
-      }
 
-      this.abilityScores = updatedAbilityScores
-      this.loading = false
+        let updatedAbilityScores = [...this.abilityScores]
+
+        for (let i = 0; i < updatedAbilityScores.length; i++) {
+          let score = updatedAbilityScores[i];
+          let detail = scoreDetail.find(detail => detail.index === score.index);
+          if (detail) {
+            score.full_name = detail.full_name;
+            score.desc = detail.desc;
+            score.skills = detail.skills;
+          }
+        }
+
+        this.abilityScores = updatedAbilityScores;
+        this.loading = false;
+
+      } catch (error) {
+        console.error(error);
+        this.loading = false;
+      }
     }
   },
-  mounted(){
-    this.getAbilityScores()
-  },
+  async mounted() {
+    await this.getAbilityScores();
+  }
 }
 </script>
 
