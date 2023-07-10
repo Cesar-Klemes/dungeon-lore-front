@@ -34,16 +34,16 @@ export default {
   methods: {
     async getAbilityScores() {
       try {
-        this.abilityScores = await this.$rpgDndApi('ability-scores');
+        const { results: abilityScores } = await this.$rpgDndApi('ability-scores');
 
         let scoreDetail = []
 
-        for (const score of this.abilityScores) {
-          let detail = await this.$axios.$get('https://www.dnd5eapi.co/api/ability-scores/' + score.index)
+        for (const score of abilityScores) {
+          let detail = await this.$rpgDndApi('ability-scores/' + score.index) // Usamos $rpgDndApi aqui
           scoreDetail.push(detail)
         }
 
-        let updatedAbilityScores = [...this.abilityScores]
+        let updatedAbilityScores = [...abilityScores]
 
         for (let i = 0; i < updatedAbilityScores.length; i++) {
           let score = updatedAbilityScores[i];

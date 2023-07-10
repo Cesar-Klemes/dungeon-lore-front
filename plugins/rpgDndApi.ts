@@ -27,7 +27,7 @@ const rpgDndApi: Plugin = (context: NuxtAppOptions, inject: (name: string, value
   inject("rpgDndApi", async (endpoint: string) => {
     const baseUrl = "https://www.dnd5eapi.co/api/";
     const response = await (context.$axios as NuxtAxiosInstance).$get(`${baseUrl}${endpoint}`);
-    return response.results;
+    return response;
   });
 };
 
